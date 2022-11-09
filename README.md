@@ -1,6 +1,7 @@
 # ConcertsApp
 
-An application for managing concerts, 
+(In progress)
+A REST version of application for managing concerts, 
 useful for both club and band managers.
 
 Technologies used:
@@ -8,8 +9,8 @@ Spring Boot
 Spring Data JPA
 Spring Security
 Hibernate
-My SQL 
+MySQL 
 Maven
-JSP & Bootstrap (for simple views only)
+
 
 
