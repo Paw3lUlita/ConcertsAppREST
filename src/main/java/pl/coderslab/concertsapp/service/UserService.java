@@ -7,6 +7,8 @@ import java.util.Set;
 
 public interface UserService {
 
+    User findById(long id);
+
     User findByUserName(String name);
 
     void saveUser(User user);
