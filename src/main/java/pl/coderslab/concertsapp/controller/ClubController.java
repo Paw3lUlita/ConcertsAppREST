@@ -26,16 +26,20 @@ public class ClubController {
         return clubService.findAllClubs();
     }
 
+    @GetMapping("/{clubId}")
+    public Club getClubById(@PathVariable long clubId){
+        return clubService.findClubById(clubId);
+    }
 
-    @PostMapping("/{userId}")
+
+    @PostMapping("/{userId}/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Void> addClub(@RequestBody Club clubToSave, @PathVariable long userId){
+    public void addClub(@RequestBody Club clubToSave, @PathVariable long userId){
 
         User user = userService.findById(userId);
         clubToSave.setUser(user);
         clubService.saveClub(clubToSave);
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 
