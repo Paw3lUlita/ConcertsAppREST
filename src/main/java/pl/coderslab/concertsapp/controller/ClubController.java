@@ -42,5 +42,11 @@ public class ClubController {
 
     }
 
+    @DeleteMapping("/{clubId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteClubById(@PathVariable long clubId){
+        clubService.deleteClubById(clubId);
+    }
+
 
 }
