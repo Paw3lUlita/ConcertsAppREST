@@ -15,13 +15,13 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/club")
+@RequestMapping("/clubs")
 public class ClubController {
 
     private final ClubService clubService;
     private final UserService userService;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<Club> getAllClubs(){
         return clubService.findAllClubs();
     }
@@ -40,6 +40,12 @@ public class ClubController {
         clubToSave.setUser(user);
         clubService.saveClub(clubToSave);
 
+    }
+
+    @PutMapping("/{clubId}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void updateClub(@PathVariable long clubId){
+        clubService.saveClub(clubService.findClubById(clubId));
     }
 
     @DeleteMapping("/{clubId}")
